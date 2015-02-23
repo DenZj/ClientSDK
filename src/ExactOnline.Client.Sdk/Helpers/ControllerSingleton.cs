@@ -143,7 +143,14 @@ namespace ExactOnline.Client.Sdk.Helpers
 					case "Warehouse": conn = new ApiConnection(_connector, _apiEndpoint + "inventory/Warehouses"); break;
 					case "Workcenter": conn = new ApiConnection(_connector, _apiEndpoint + "manufacturing/Workcenters"); break;
 
+                    case "Transaction": conn = new ApiConnection(_connector, _apiEndpoint + "financialtransaction/Transactions"); break;
+                    case "TransactionLine": conn = new ApiConnection(_connector, _apiEndpoint + "financialtransaction/TransactionLines"); break;
 
+                    case "Payable": conn = new ApiConnection(_connector, _apiEndpoint + "read/financial/PayablesList"); break;
+                    case "Receivable": conn = new ApiConnection(_connector, _apiEndpoint + "read/financial/ReceivablesList"); break;
+
+                    case "Project": conn = new ApiConnection(_connector, _apiEndpoint + "project/Projects"); break;
+              
 					default:
 						throw new Exception("Specified entity is not known in Exact Online. Please check the reference documentation");
 				}
